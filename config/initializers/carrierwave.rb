@@ -13,7 +13,7 @@ CarrierWave.configure do |config|
     config.storage = :fog
     config.cache_dir = Rails.root.join('tmp', 'uploads').to_s
     config.fog_credentials = {
-      provider:              AppConfig.environment.s3.provider.get,
+      provider:              'AWS',
       aws_access_key_id:     AppConfig.environment.s3.key.get,
       aws_secret_access_key: AppConfig.environment.s3.secret.get,
       region:                AppConfig.environment.s3.region.get,
