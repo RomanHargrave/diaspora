@@ -24,6 +24,10 @@ CarrierWave.configure do |config|
       config.fog_attributes['Cache-Control'] = 'max-age=31536000'
     end
 
+    if AppConfig.environment.s3.asset_host?
+      config.asset_host = AppConfig.environment.s3.asset_host.get
+    end
+
     config.fog_directory = AppConfig.environment.s3.bucket.get
   else
     config.storage = :file
