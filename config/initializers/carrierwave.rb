@@ -18,7 +18,7 @@ CarrierWave.configure do |config|
       aws_secret_access_key: AppConfig.environment.s3.secret.get,
       region:                AppConfig.environment.s3.region.get,
       host:                  AppConfig.environment.s3.host.get,
-      port:                  APpConfig.environment.s3.port.get
+      port:                  AppConfig.environment.s3.port.get
     }
     if AppConfig.environment.s3.cache?
       config.fog_attributes['Cache-Control'] = 'max-age=31536000'
